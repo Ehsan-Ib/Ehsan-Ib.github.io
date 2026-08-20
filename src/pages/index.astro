@@ -1,13 +1,28 @@
 ---
-// Placeholder so the build passes. Real landing page comes after the
-// ternary-llm-kernel project page is built and verified (see CLAUDE.md build order).
+import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import ProjectList from '../components/ProjectList.astro';
+
+const featured = (
+  await getCollection('projects', ({ data }) => !data.draft && data.featured)
+)
+  .sort((a, b) => a.data.order - b.data.order)
+  .slice(0, 3);
 ---
 
-<Base title="ehsan-ib.github.io">
-  <main style="max-width: var(--measure); margin: 0 auto; padding: 4rem 1.25rem;">
-    <h1>ehsan-ib.github.io</h1>
-    <p style="color: var(--text-muted);">Landing page under construction.</p>
-    <p><a href="/projects/">projects →</a></p>
+<Base title="ehsan-ib" description="Ehsan's portfolio — systems and performance engineering projects.">
+  <SiteHeader />
+  <main class="page">
+    <section class="intro">
+      <h1>Ehsan</h1>
+      <!-- PLACEHOLDER: replace with the real one-line self-description -->
+      <p class="placeholder">[ placeholder — one-line self-description goes here ]</p>
+    </section>
+    <section>
+      <h2 class="section-label">Featured</h2>
+      <ProjectList projects={featured} />
+      <p class="more-link"><a href="/projects/">all projects →</a></p>
+    </section>
   </main>
 </Base>

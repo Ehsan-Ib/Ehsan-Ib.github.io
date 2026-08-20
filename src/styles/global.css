@@ -106,6 +106,54 @@ img {
   padding: 3rem 1.25rem 5rem;
 }
 
+.site-header .nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+/* ---------- landing / about ---------- */
+
+.intro {
+  margin-bottom: 3.5rem;
+}
+
+.intro h1 {
+  font-size: clamp(1.6rem, 5vw, 2rem);
+  margin: 0 0 1rem;
+}
+
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-transform: lowercase;
+  margin: 2.5rem 0 0;
+}
+
+.more-link {
+  margin-top: 2rem;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+}
+
+.placeholder {
+  border: 1px dashed var(--border);
+  border-radius: 4px;
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+  max-width: var(--measure);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+}
+
+.contact {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  margin-top: 0.75rem;
+}
+
 /* ---------- project index ---------- */
 
 .page-title {

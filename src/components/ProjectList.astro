@@ -1,0 +1,31 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  projects: CollectionEntry<'projects'>[];
+}
+
+const { projects } = Astro.props;
+---
+
+<ul class="project-list">
+  {
+    projects.map((p) => (
+      <li>
+        <h2>
+          <a href={`/projects/${p.id}/`}>{p.data.title}</a>
+        </h2>
+        <p class="summary">{p.data.summary}</p>
+        <p class="item-meta">
+          {p.data.date.toLocaleDateString('en-US', {
+            month: 'short',
+            year: 'numeric',
+            timeZone: 'UTC',
+          })}
+          {' · '}
+          {p.data.stack.join(' · ')}
+        </p>
+      </li>
+    ))
+  }
+</ul>
