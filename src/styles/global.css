@@ -106,6 +106,50 @@ img {
   padding: 3rem 1.25rem 5rem;
 }
 
+/* ---------- project index ---------- */
+
+.page-title {
+  font-size: 1.35rem;
+  margin: 0 0 2.25rem;
+}
+
+.project-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.project-list li {
+  padding: 1.75rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.project-list h2 {
+  font-size: 1.05rem;
+  margin: 0 0 0.45rem;
+}
+
+.project-list h2 a {
+  color: var(--text);
+}
+
+.project-list h2 a:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.project-list .summary {
+  margin: 0 0 0.55rem;
+  max-width: var(--measure);
+}
+
+.project-list .item-meta {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
 /* ---------- project header ---------- */
 
 .project-header h1 {

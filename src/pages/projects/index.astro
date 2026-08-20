@@ -1,0 +1,37 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+
+const projects = (await getCollection('projects', ({ data }) => !data.draft)).sort(
+  (a, b) => a.data.order - b.data.order
+);
+---
+
+<Base title="projects · ehsan-ib" description="Projects — SIMD kernels, RTL design, and ML systems.">
+  <SiteHeader />
+  <main class="page">
+    <h1 class="page-title">Projects</h1>
+    <ul class="project-list">
+      {
+        projects.map((p) => (
+          <li>
+            <h2>
+              <a href={`/projects/${p.id}/`}>{p.data.title}</a>
+            </h2>
+            <p class="summary">{p.data.summary}</p>
+            <p class="item-meta">
+              {p.data.date.toLocaleDateString('en-US', {
+                month: 'short',
+                year: 'numeric',
+                timeZone: 'UTC',
+              })}
+              {' · '}
+              {p.data.stack.join(' · ')}
+            </p>
+          </li>
+        ))
+      }
+    </ul>
+  </main>
+</Base>
