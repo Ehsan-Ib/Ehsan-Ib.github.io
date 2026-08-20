@@ -30,13 +30,12 @@ are the point; everything else is packaging.
 Four page types. Resist adding more.
 
 ```
-/                    Landing — who I am, background, 3 featured projects
+/                    Landing — who I am, 3 featured projects
 /projects            Index of all projects
 /projects/[slug]     Project detail (the actual content)
+/about               Background, what I'm looking for
 /contact             Email (obfuscated, never mailto/plain), GitHub, LinkedIn
 ```
-
-(There is no /about — Ehsan folded that content into the landing page.)
 
 No blog. No tag archive pages. No search.
 
@@ -72,9 +71,8 @@ The project index and landing page must filter out `draft: true`.
 
 Live:
 1. `ternary-llm-kernel` — flagship, lead with it everywhere. Featured.
-2. `cuda-flash-attention` — in progress; published as visible placeholder at
-   Ehsan's request (2026-08-20). Featured. Every value is still a placeholder —
-   never fill in numbers or claims that haven't been measured.
+2. `cuda-flash-attention` — real writeup landed 2026-08-20 (from Ehsan's own
+   file). Featured. Completion date in frontmatter is still a TODO placeholder.
 3. `punc-lc3-processor` — featured.
 4. `health-fitness-tracker` — not featured (Ehsan's call, 2026-08-20).
 

@@ -74,6 +74,28 @@ img {
   height: auto;
 }
 
+/* Subtle circuit-trace motif pinned to the top-right corner. Decorative only —
+   keep it faint enough that dense page content always wins. */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 560px;
+  height: 560px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='560' height='560' viewBox='0 0 560 560' fill='none'%3E%3Cg stroke='%239a9aa3' stroke-opacity='0.13'%3E%3Cpath d='M560 60H470L430 100H310'/%3E%3Ccircle cx='302' cy='100' r='3.5'/%3E%3Cpath d='M500 0V70L460 110V200'/%3E%3Ccircle cx='460' cy='208' r='3.5'/%3E%3Cpath d='M420 0V44L380 84V140'/%3E%3Ccircle cx='380' cy='148' r='3.5'/%3E%3Cpath d='M560 240H500L468 272V320'/%3E%3Ccircle cx='468' cy='328' r='3.5'/%3E%3Cpath d='M560 360H480L440 320H368'/%3E%3Ccircle cx='360' cy='320' r='3.5'/%3E%3Cpath d='M240 0V50L280 90V128'/%3E%3Ccircle cx='280' cy='136' r='3.5'/%3E%3C/g%3E%3Cg stroke='%23d9722c' stroke-opacity='0.2'%3E%3Cpath d='M560 440H490L450 400H400'/%3E%3Ccircle cx='392' cy='400' r='3.5'/%3E%3Ccircle cx='348' cy='52' r='3.5'/%3E%3C/g%3E%3C/svg%3E")
+    top right no-repeat;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@media (max-width: 900px) {
+  body::before {
+    width: 300px;
+    height: 300px;
+  }
+}
+
 /* ---------- layout ---------- */
 
 .site-header {
