@@ -1,0 +1,16 @@
+# build output
+dist/
+.astro/
+
+# dependencies
+node_modules/
+
+# OS
+.DS_Store
+
+# local staging for project drafts — published content lives in src/content/projects/
+files/
+
+# environment
+.env
+.env.production
