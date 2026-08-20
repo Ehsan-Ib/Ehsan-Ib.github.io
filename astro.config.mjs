@@ -5,4 +5,9 @@ import { defineConfig } from 'astro/config';
 // If a custom domain is added later, `site` is the only line that changes.
 export default defineConfig({
   site: 'https://ehsan-ib.github.io',
+  markdown: {
+    shikiConfig: {
+      theme: 'github-dark-default',
+    },
+  },
 });

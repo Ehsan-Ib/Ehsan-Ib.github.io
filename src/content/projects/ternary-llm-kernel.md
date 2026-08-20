@@ -42,6 +42,8 @@ Output is verified bit-exact against TL1 before any timing is taken — zero mis
 
 ## Finding the real bottleneck
 
+![Roofline plot — LUT ternary kernel vs TL1 on M4 Pro. All measured points sit at arithmetic intensity 3.0 on the 26 GB/s effective-bandwidth line, well below the 90 GB/s L3 sequential roof, with the 1.19× gap between TL1 and the LUT kernel annotated.](../../assets/ternary-roofline.png)
+
 The roofline analysis is the part I'd point an interviewer at. Arithmetic intensity works out to exactly 3.0 ops/byte for every shape — a structural property of the encoding, not a coincidence of dimensions. Against the L3 sequential ridge that reads as compute-bound; against the kernel's *actual* effective bandwidth (~26 GB/s) it's memory-bound.
 
 The gap is the index array's layout. Indices are stored transposed, so consecutive groups sit 64 cache lines apart and each fetched line delivers only about 16 useful bytes — roughly 25% cache-line utilization.

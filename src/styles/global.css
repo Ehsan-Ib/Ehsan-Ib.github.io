@@ -73,3 +73,174 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+/* ---------- layout ---------- */
+
+.site-header {
+  border-bottom: 1px solid var(--border);
+}
+
+.site-header nav {
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 1.1rem 1.25rem;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+}
+
+.site-header a {
+  color: var(--text-muted);
+}
+
+.site-header a:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.page {
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 3rem 1.25rem 5rem;
+}
+
+/* ---------- project header ---------- */
+
+.project-header h1 {
+  font-size: clamp(1.45rem, 4.5vw, 1.9rem);
+  margin: 0 0 0.75rem;
+}
+
+.project-meta {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: 0 0 0.4rem;
+}
+
+.project-meta a {
+  color: var(--accent);
+}
+
+.project-stack {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 2.5rem;
+  margin: 1.75rem 0 0;
+  padding: 1rem 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.metrics .value {
+  font-family: var(--font-mono);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.metrics .label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 0.1rem;
+}
+
+/* ---------- markdown prose ---------- */
+
+.prose {
+  margin-top: 2.25rem;
+}
+
+.prose > :first-child {
+  margin-top: 0;
+}
+
+.prose h2 {
+  font-size: 1.2rem;
+  margin: 2.75rem 0 0.75rem;
+}
+
+.prose h3 {
+  font-size: 1.05rem;
+  margin: 2rem 0 0.5rem;
+}
+
+.prose p,
+.prose ul,
+.prose ol {
+  max-width: var(--measure);
+}
+
+.prose li {
+  margin-bottom: 0.35rem;
+}
+
+.prose :not(pre) > code {
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 0.1em 0.35em;
+  font-size: 0.85em;
+}
+
+.prose pre {
+  margin: 1.4rem 0;
+}
+
+/* Tables carry real content, some six columns wide.
+   They scroll horizontally instead of squishing or overflowing the page. */
+.prose table {
+  display: block;
+  overflow-x: auto;
+  border-collapse: collapse;
+  margin: 1.6rem 0;
+  font-size: 0.875rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.prose th,
+.prose td {
+  border: 1px solid var(--border);
+  padding: 0.45rem 0.9rem;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.prose th {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+/* Plots and screenshots are light-background; frame them deliberately. */
+.prose img {
+  display: block;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  margin: 1.6rem 0;
+  padding: 0.5rem;
+}
+
+.prose hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 2.5rem 0;
+}
+
+.prose blockquote {
+  margin: 1.4rem 0;
+  padding-left: 1rem;
+  border-left: 2px solid var(--accent);
+  color: var(--text-muted);
+}

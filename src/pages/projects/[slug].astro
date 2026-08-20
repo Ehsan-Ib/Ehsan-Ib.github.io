@@ -1,0 +1,61 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+
+export async function getStaticPaths() {
+  // Drafts get no route at all — they must never render or be linked.
+  const projects = await getCollection('projects', ({ data }) => !data.draft);
+  return projects.map((project) => ({
+    params: { slug: project.id },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+const { Content } = await render(project);
+const d = project.data;
+
+const dateLabel = d.date.toLocaleDateString('en-US', {
+  month: 'short',
+  year: 'numeric',
+  timeZone: 'UTC',
+});
+---
+
+<Base title={`${d.title} · ehsan-ib`} description={d.summary}>
+  <SiteHeader />
+  <main class="page">
+    <article>
+      <header class="project-header">
+        <h1>{d.title}</h1>
+        <p class="project-meta">
+          {dateLabel} · {d.status}{
+            d.repo && (
+              <>
+                {' · '}
+                <a href={d.repo}>source&nbsp;↗</a>
+              </>
+            )
+          }
+        </p>
+        <p class="project-stack">{d.stack.join(' · ')}</p>
+        {
+          d.metrics && (
+            <div class="metrics">
+              {d.metrics.map((m) => (
+                <div>
+                  <div class="value">{m.value}</div>
+                  <div class="label">{m.label}</div>
+                </div>
+              ))}
+            </div>
+          )
+        }
+      </header>
+      <div class="prose">
+        <Content />
+      </div>
+    </article>
+  </main>
+</Base>
