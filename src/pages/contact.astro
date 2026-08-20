@@ -1,0 +1,27 @@
+---
+import Base from '../layouts/Base.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+---
+
+<Base title="contact · ehsan-ib" description="How to reach Ehsan.">
+  <SiteHeader />
+  <main class="page">
+    <h1 class="page-title">Contact</h1>
+    <ul class="contact-list">
+      <li>
+        <span class="label">email</span>
+        <!-- Deliberately obfuscated — do not turn this into a mailto: link or plain address -->
+        <span>ehsan.ib [at] princeton.edu</span>
+      </li>
+      <li>
+        <span class="label">github</span>
+        <a href="https://github.com/Ehsan-Ib">github.com/Ehsan-Ib</a>
+      </li>
+      <li>
+        <span class="label">linkedin</span>
+        <!-- PLACEHOLDER: swap in the real LinkedIn profile URL -->
+        <span class="pending">[ placeholder — LinkedIn URL ]</span>
+      </li>
+    </ul>
+  </main>
+</Base>

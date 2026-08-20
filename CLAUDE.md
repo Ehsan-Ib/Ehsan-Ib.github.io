@@ -30,11 +30,13 @@ are the point; everything else is packaging.
 Four page types. Resist adding more.
 
 ```
-/                    Landing — who I am, 3 featured projects
+/                    Landing — who I am, background, 3 featured projects
 /projects            Index of all projects
 /projects/[slug]     Project detail (the actual content)
-/about               Background, what I'm looking for, contact
+/contact             Email (obfuscated, never mailto/plain), GitHub, LinkedIn
 ```
+
+(There is no /about — Ehsan folded that content into the landing page.)
 
 No blog. No tag archive pages. No search.
 
