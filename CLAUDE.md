@@ -71,13 +71,12 @@ The project index and landing page must filter out `draft: true`.
 ## Current projects
 
 Live:
-1. `ternary-llm-kernel` — flagship, lead with it everywhere
-2. `punc-lc3-processor`
-3. `health-fitness-tracker`
-
-Draft (**do not publish, do not link**):
-- `cuda-flash-attention` — unfinished. It exists as a file with placeholder
-  values. Keep `draft: true`.
+1. `ternary-llm-kernel` — flagship, lead with it everywhere. Featured.
+2. `cuda-flash-attention` — in progress; published as visible placeholder at
+   Ehsan's request (2026-08-20). Featured. Every value is still a placeholder —
+   never fill in numbers or claims that haven't been measured.
+3. `punc-lc3-processor` — featured.
+4. `health-fitness-tracker` — not featured (Ehsan's call, 2026-08-20).
 
 ## Hard rules on content
 

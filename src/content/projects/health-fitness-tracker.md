@@ -6,7 +6,7 @@ summary: "An iOS app that estimates meal macros from a plain-English description
 tags: ["iOS", "SwiftUI", "LLM systems", "Firebase"]
 stack: ["Swift", "SwiftUI", "Firebase Firestore", "Python/Flask", "Groq", "NVIDIA NIM"]
 repo: "https://github.com/Ehsan-Ib/HealthTracker"
-featured: true
+featured: false
 order: 4
 status: "personal use"
 ---
