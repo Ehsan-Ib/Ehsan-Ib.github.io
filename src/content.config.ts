@@ -10,6 +10,9 @@ const projects = defineCollection({
     title: z.string(),
     slug: z.string(),
     date: z.coerce.date(),
+    // optional human-readable range, e.g. "November – December 2025"; shown on
+    // the detail page in place of the formatted date. `date` stays the sort key.
+    period: z.string().optional(),
     // one sentence, should contain a number where possible
     summary: z.string(),
     tags: z.array(z.string()),
@@ -23,6 +26,9 @@ const projects = defineCollection({
       .optional(),
     // optional provenance, e.g. "ECE 206 — Digital Logic Design"; most projects won't have it
     course: z.string().optional(),
+    // optional muted text shown where the source link would go, e.g.
+    // "Source withheld under course policy." Rendered only when repo is absent.
+    source_note: z.string().optional(),
     featured: z.boolean(),
     // sort order on landing page
     order: z.number(),

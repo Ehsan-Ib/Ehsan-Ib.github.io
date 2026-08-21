@@ -46,11 +46,16 @@ Projects live in `src/content/projects/*.md`. Frontmatter:
 ```yaml
 title: string
 slug: string
-date: date
+date: date               # sort key; cards show it as "Mon YYYY"
+period: string           # optional human range, e.g. "November – December 2025";
+                         # replaces the date display on the detail page only
 summary: string          # one sentence, should contain a number where possible
 tags: string[]
 stack: string[]
 repo: string             # GitHub URL
+source_note: string      # optional; muted text in the repo link's place when
+                         # there is no repo, e.g. "Source withheld under course
+                         # policy."
 course: string           # optional, e.g. "ECE 206 — Digital Logic Design".
                          # Muted provenance near the date — never a badge,
                          # filter, or section. Cards show just the code.
