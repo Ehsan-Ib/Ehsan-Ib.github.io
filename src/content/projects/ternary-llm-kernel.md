@@ -1,7 +1,7 @@
 ---
 title: "TernaryLLM — a faster ternary inference kernel"
 slug: "ternary-llm-kernel"
-date: 2026-01-15 # TODO: replace with actual completion date
+date: 2026-06-01
 summary: "A NEON kernel for BitNet 1.58-bit matrix-vector multiply that beats Microsoft's TL1 by 1.17–1.24× on Apple M4 Pro, with bit-exact output."
 tags: ["SIMD", "ARM NEON", "LLM inference", "quantization", "performance"]
 stack: ["C++", "ARM NEON intrinsics", "Python"]

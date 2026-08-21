@@ -1,7 +1,7 @@
 ---
 title: "FlashAttention from scratch in CUDA"
 slug: "cuda-flash-attention"
-date: 2026-03-01 # TODO: replace with actual completion date
+date: 2026-08-01
 summary: "A fused attention kernel in raw CUDA that cuts measured DRAM traffic 22.2×, and a measured roofline model showing why that correctly buys only 1.46× in wall-clock."
 tags: ["CUDA", "GPU", "kernel fusion", "roofline", "performance"]
 stack: ["CUDA C++", "Nsight Compute", "Python", "PyTorch"]

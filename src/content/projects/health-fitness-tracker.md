@@ -1,7 +1,7 @@
 ---
 title: "Health & Fitness Tracker"
 slug: "health-fitness-tracker"
-date: 2025-11-01 # TODO: replace with actual date
+date: 2026-04-01
 summary: "An iOS app that estimates meal macros from a plain-English description by routing it through a mixture-of-agents pipeline across five models."
 tags: ["iOS", "SwiftUI", "LLM systems", "Firebase"]
 stack: ["Swift", "SwiftUI", "Firebase Firestore", "Python/Flask", "Groq", "NVIDIA NIM"]

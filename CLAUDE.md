@@ -148,8 +148,9 @@ npm run preview  # preview the build
 
 These are blockers Claude Code cannot resolve alone — ask rather than invent:
 
-- One-line self-description for the landing page
-- About page copy
-- Contact method (and how obfuscated the email should be)
-- Whether a resume PDF gets linked
-- Design reference sites
+- Design reference sites (the TODO in Design direction above)
+- PUnC: one sentence on what was course scaffolding vs. Ehsan's own work
+
+Resolved (2026-08-21): one-liner and about copy are live in Ehsan's words;
+contact is the obfuscated Princeton email (never mailto/plain) plus GitHub and
+LinkedIn; no resume link, strictly portfolio; all four project dates are real.

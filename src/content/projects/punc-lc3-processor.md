@@ -1,7 +1,7 @@
 ---
 title: "PUnC — a 16-bit LC-3 processor in Verilog"
 slug: "punc-lc3-processor"
-date: 2025-12-01 # TODO: replace with actual date
+date: 2025-12-01
 summary: "A 16-bit microprocessor implementing most of the LC-3 ISA, with FSM control, a separate datapath, and a full instruction-level testbench."
 tags: ["Verilog", "RTL", "computer architecture", "FPGA"]
 stack: ["Verilog", "Vivado", "iverilog"]
