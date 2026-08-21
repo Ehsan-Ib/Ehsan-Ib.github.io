@@ -43,12 +43,14 @@ h6 {
   line-height: 1.25;
 }
 
+/* Links rest in the accent orange and flip to white on hover. */
 a {
   color: var(--accent);
   text-decoration: none;
 }
 
 a:hover {
+  color: var(--text);
   text-decoration: underline;
   text-underline-offset: 3px;
 }
@@ -89,10 +91,29 @@ body::before {
   z-index: -1;
 }
 
+/* Companion motif in the bottom-left corner — same language, different routing. */
+body::after {
+  content: '';
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 460px;
+  height: 460px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='460' height='460' viewBox='0 0 460 460' fill='none'%3E%3Cg stroke='%239a9aa3' stroke-opacity='0.13'%3E%3Cpath d='M0 120H70L110 160H190'/%3E%3Ccircle cx='198' cy='160' r='3.5'/%3E%3Cpath d='M0 220H50L90 260V320'/%3E%3Ccircle cx='90' cy='328' r='3.5'/%3E%3Cpath d='M80 460V420L120 380V330'/%3E%3Ccircle cx='120' cy='322' r='3.5'/%3E%3Cpath d='M180 460V430L220 390V340'/%3E%3Ccircle cx='220' cy='332' r='3.5'/%3E%3Cpath d='M300 460V410L340 370V310'/%3E%3Ccircle cx='340' cy='302' r='3.5'/%3E%3Cpath d='M0 320H30L60 350V410'/%3E%3Ccircle cx='60' cy='418' r='3.5'/%3E%3C/g%3E%3Cg stroke='%23d9722c' stroke-opacity='0.2'%3E%3Cpath d='M400 460V420L360 380V330'/%3E%3Ccircle cx='360' cy='322' r='3.5'/%3E%3Ccircle cx='150' cy='240' r='3.5'/%3E%3C/g%3E%3C/svg%3E")
+    bottom left no-repeat;
+  pointer-events: none;
+  z-index: -1;
+}
+
 @media (max-width: 900px) {
   body::before {
     width: 300px;
     height: 300px;
+  }
+
+  body::after {
+    width: 240px;
+    height: 240px;
   }
 }
 
@@ -114,11 +135,11 @@ body::before {
 }
 
 .site-header a {
-  color: var(--text-muted);
+  color: var(--accent);
 }
 
 .site-header a:hover {
-  color: var(--accent);
+  color: var(--text);
   text-decoration: none;
 }
 
@@ -142,6 +163,13 @@ body::before {
 .intro h1 {
   font-size: clamp(1.6rem, 5vw, 2rem);
   margin: 0 0 1rem;
+}
+
+.tagline {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  max-width: var(--measure);
+  margin: 0;
 }
 
 .section-label {
@@ -221,11 +249,11 @@ body::before {
 }
 
 .project-list h2 a {
-  color: var(--text);
+  color: var(--accent);
 }
 
 .project-list h2 a:hover {
-  color: var(--accent);
+  color: var(--text);
   text-decoration: none;
 }
 
