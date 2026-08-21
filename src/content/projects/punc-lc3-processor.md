@@ -5,7 +5,7 @@ date: 2025-12-15
 period: "November – December 2025"
 summary: "A 16-bit microprocessor implementing most of the LC-3 ISA — datapath, FSM controller, and a sixteen-program instruction-level testbench."
 tags: ["Verilog", "RTL", "computer architecture"]
-stack: ["Verilog"] # TODO: add your simulator — Vivado, ModelSim, QuestaSim, whichever you actually used
+stack: ["Verilog", "Vivado"] 
 course: "ECE 206 — Digital Logic Design"
 source_note: "Source withheld under course policy."
 featured: true
