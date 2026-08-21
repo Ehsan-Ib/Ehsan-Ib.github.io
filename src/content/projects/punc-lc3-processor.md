@@ -23,10 +23,6 @@ metrics:
 A working 16-bit processor built from the ISA spec: datapath, control unit,
 register file, and the test infrastructure to prove it runs real programs.
 
-<!-- TODO: one sentence on what was provided vs. what you wrote. Reviewers assume
-     the worst if you don't say — e.g. "Memory and register-file modules were
-     provided; datapath, controller, and testbench are mine." -->
-
 The design keeps control and datapath strictly separated. A four-state FSM —
 fetch, decode, execute, halt — emits control signals; the datapath holds the
 ALU, program counter, instruction register, condition-code flags, and the mux
@@ -34,25 +30,10 @@ network wiring them together. Condition codes update combinatorially whenever
 the controller asserts the flag enable, driven by either ALU results or memory
 loads.
 
-Most instructions retire in a single execute cycle. Three need two, and the
-reasons are the interesting part: `LDI` is a double dereference, reading a
+Most instructions retire in a single execute cycle. Three need two: `LDI` is a double dereference, reading a
 pointer from memory and then reading through it; `LDR` computes base+offset in
 one step and uses that address in the next; `STR` latches the computed target
 before writing to it.
 
-Verification is sixteen assembly programs, each compiled to a memory image and
-run through a testbench that loads it, pulses reset, waits for the PC to stop
-advancing, and asserts on expected register and memory state. Coverage runs from
-single-instruction checks — every addressing mode of every load and store, both
-ALU operand forms — up to two real programs: Euclidean GCD, and Fibonacci
-combined with an AND test.
+Verification runs through an automated testbench that asserts on expected register and memory state for each instruction and a few combinations of instructions. I inspected the waveform when anything failed. On top of that I wrote an original LC-3 assembly program and ran it end to end, which exercises the instructions together rather than one at a time.
 
-## A pipelined variant
-
-I also built SIPP, a separate pipelined implementation with its own controller,
-datapath, and testbench.
-
-<!-- TODO: two or three sentences here, and they're worth more than anything
-     above. Pipelining is where hazards, forwarding, and stalls live, and that's
-     what hardware interviews actually probe. How many stages? Forwarding or
-     stalling on data hazards? What happens on a taken branch? -->

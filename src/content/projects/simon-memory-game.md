@@ -38,7 +38,7 @@ grows.
 
 Verification is modular: separate testbenches for the datapath and the
 controller, so each is exercised in isolation, plus a gameplay testbench that
-drives full rounds end to end — the sequence growing, a correct replay
+drives full rounds end to end: the sequence growing, a correct replay
 advancing, an incorrect one ending the game.
 
 <!-- TODO: a waveform screenshot would carry this page. With no repo, it's the
