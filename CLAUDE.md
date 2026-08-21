@@ -51,6 +51,9 @@ summary: string          # one sentence, should contain a number where possible
 tags: string[]
 stack: string[]
 repo: string             # GitHub URL
+course: string           # optional, e.g. "ECE 206 — Digital Logic Design".
+                         # Muted provenance near the date — never a badge,
+                         # filter, or section. Cards show just the code.
 featured: boolean
 order: number            # sort order on landing page
 status: string

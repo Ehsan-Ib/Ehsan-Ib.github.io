@@ -21,6 +21,8 @@ const projects = defineCollection({
       .or(z.literal('none'))
       .transform((r) => (r === 'none' ? undefined : r))
       .optional(),
+    // optional provenance, e.g. "ECE 206 — Digital Logic Design"; most projects won't have it
+    course: z.string().optional(),
     featured: z.boolean(),
     // sort order on landing page
     order: z.number(),

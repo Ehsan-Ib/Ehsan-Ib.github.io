@@ -30,7 +30,14 @@ const dateLabel = d.date.toLocaleDateString('en-US', {
       <header class="project-header">
         <h1>{d.title}</h1>
         <p class="project-meta">
-          {dateLabel} · {d.status}{
+          {dateLabel}{
+            d.course && (
+              <>
+                {' · '}
+                {d.course}
+              </>
+            )
+          }{' · '}{d.status}{
             d.repo && (
               <>
                 {' · '}

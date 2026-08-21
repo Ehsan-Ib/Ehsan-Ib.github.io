@@ -6,6 +6,12 @@ interface Props {
 }
 
 const { projects } = Astro.props;
+
+// Cards show just the course code ("ECE 206"), not the full course name.
+function courseCode(course: string): string {
+  const match = course.match(/^[A-Za-z&/]+\s*\d+[A-Za-z]*/);
+  return match ? match[0] : course.split('—')[0].trim();
+}
 ---
 
 <ul class="project-list">
@@ -21,7 +27,14 @@ const { projects } = Astro.props;
             month: 'short',
             year: 'numeric',
             timeZone: 'UTC',
-          })}
+          })}{
+            p.data.course && (
+              <>
+                {' · '}
+                {courseCode(p.data.course)}
+              </>
+            )
+          }
           {' · '}
           {p.data.stack.join(' · ')}
         </p>
